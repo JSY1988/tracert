@@ -112,7 +112,7 @@ int recvPing(SOCKET sock, PIPHeader recvBuf, struct sockaddr_in *source)
 
 	return recvfrom(sock, (char *)recvBuf, 1024, 0, (struct sockaddr *)source, &srcLen);
 }
-void printPackInfo(PPacketDetails details, BOOL printIP)
+void print(PPacketDetails details, BOOL printIP)
 {
 	printf("%6d", details->ping);
 
@@ -121,6 +121,10 @@ void printPackInfo(PPacketDetails details, BOOL printIP)
 		if (srcAddr != NULL) {
 			printf("\t%s", srcAddr);
 		}
+		char hbuf[NI_MAXHOST];
+		if (!getnameinfo((struct sockaddr *)(details->source), sizeof(struct sockaddr_in), hbuf, sizeof(hbuf),
+			NULL, 0, NI_NAMEREQD))
+			printf(" %s", hbuf);
 	}
 }
 
@@ -138,9 +142,9 @@ int main(int argc, char *argv[])
 		std::cout << "error" << std::endl;
 		exit(1);
 	}
-
-	PCTSTR adrtemp = "216.58.207.46";
-	UINT destAddr = inet_addr(adrtemp); // getting the IP addr from cmd params
+	
+	
+	UINT destAddr = inet_addr(argv[1]); 
 
 	SOCKADDR_IN dest,source;
 	PICMPHeader sendBuf = (PICMPHeader)malloc(DEFAULT_PACKET_SIZE);
@@ -160,7 +164,7 @@ int main(int argc, char *argv[])
 
 	int hops = 30;
 	BOOL traceEnd = FALSE, error = FALSE, printIP;
-	cout << "Трассировка маршрута к " << adrtemp <<  endl;
+	cout << "Трассировка маршрута к " << argv[1] <<  endl;
 	cout << "с максимальным числом прыжков 30:" << endl;
 	do
 	{
@@ -195,7 +199,7 @@ int main(int argc, char *argv[])
 					if (decodeRes == 2) {
 						traceEnd = TRUE;
 					}
-					printPackInfo(&details, printIP);
+					print(&details, printIP);
 				}
 			}
 		}

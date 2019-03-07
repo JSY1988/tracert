@@ -1,10 +1,10 @@
 ﻿  Source.cpp
 c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(120): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock2.h(1849): note:  см. объявление "inet_ntoa"
-c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(143): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(147): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock2.h(1831): note:  см. объявление "inet_addr"
-c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(148): warning C4996: 'WSASocketA': Use WSASocketW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(152): warning C4996: 'WSASocketA': Use WSASocketW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winsock2.h(3416): note:  см. объявление "WSASocketA"
-c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(131): warning C4101: sendHdr: неиспользованная локальная переменная
-c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(134): warning C4101: err: неиспользованная локальная переменная
+c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(135): warning C4101: sendHdr: неиспользованная локальная переменная
+c:\users\dimak\onedrive\документы\github\tracert\project2\source.cpp(138): warning C4101: err: неиспользованная локальная переменная
   Project2.vcxproj -> C:\Users\dimak\OneDrive\Документы\GitHub\tracert\x64\Debug\Project2.exe
